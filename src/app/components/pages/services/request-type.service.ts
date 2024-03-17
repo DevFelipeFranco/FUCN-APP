@@ -11,10 +11,10 @@ export class RequestTypeService {
   constructor(private _httpClient: HttpClient) { }
 
   public findAllRequestType(): Observable<any> {
-    return this._httpClient.get<any>(`http://localhost:8080/api/v1/requestType`);
+    return this._httpClient.get<any>(`https://projectfucn-production.up.railway.app/api/v1/requestType`);
   }
 
   public createRequestType(requestType: RequestTypeModel): Observable<any> {
-    return this._httpClient.post<any>(`http://localhost:8080/api/v1/requestType/create-request-type`, requestType);
+    return this._httpClient.post<any>(`https://projectfucn-production.up.railway.app/api/v1/requestType/create-request-type`, requestType);
   }
 }

@@ -11,6 +11,6 @@ export class LoanService {
   constructor(private _httpClient: HttpClient) { }
 
   public addLoan(loan: LoanModel): Observable<any> {
-    return this._httpClient.post<any>('http://localhost:8080/api/v1/loans/create-loan', loan);
+    return this._httpClient.post<any>('https://projectfucn-production.up.railway.app/api/v1/loans/create-loan', loan);
   }
 }
