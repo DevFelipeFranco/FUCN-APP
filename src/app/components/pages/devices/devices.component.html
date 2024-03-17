@@ -1,0 +1,40 @@
+<mat-card class="card card-login">
+    <mat-card-content class="container">
+        <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+            <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Crear dispositivo</h4>
+            </div>
+        </div>
+
+        <div class="demo-button-container">
+            <button mat-raised-button (click)="openDialog()" class="demo-button">
+              Crear
+            </button>
+          </div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef style="color: black;"> Dispositivo </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="model">
+              <th mat-header-cell *matHeaderCellDef style="color: black;"> Modelo </th>
+              <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="reference">
+              <th mat-header-cell *matHeaderCellDef style="color: black;"> Referencia </th>
+              <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,45 @@
+<mat-card class="card card-login">
+  <mat-card-content class="container">
+      <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+          <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">Solicitudes creadas</h4>
+          </div>
+      </div>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="dispositivo">
+          <th mat-header-cell *matHeaderCellDef style="color: black;"> Dispositivo </th>
+          <td mat-cell *matCellDef="let element"> {{element.device.name}} - {{element.device.model}}</td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="tipo de solicitud">
+          <th mat-header-cell *matHeaderCellDef style="color: black;"> Tipo de solicitud </th>
+          <td mat-cell *matCellDef="let element"> {{element.requestType.name}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="direccion">
+          <th mat-header-cell *matHeaderCellDef style="color: black;"> Direccion </th>
+          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="fecha de solicitud">
+          <th mat-header-cell *matHeaderCellDef style="color: black;"> Fecha de solicitud </th>
+          <td mat-cell *matCellDef="let element"> {{element.loanDate}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+    </mat-card-content>
+  </mat-card>
+  

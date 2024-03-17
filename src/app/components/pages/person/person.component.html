@@ -1,0 +1,86 @@
+<mat-card class="card card-login">
+  <mat-card-content class="container">
+      <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+          <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">Registrar información personal</h4>
+          </div>
+      </div>
+
+      <div class="row g-5 mt-3">
+        <div class="col-md-7 col-lg-8">
+            <!-- <h4 class="mb-3">asd</h4> -->
+            <form class="needs-validation" [formGroup]="registerForm" (ngSubmit)="onLogin()">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <mat-form-field class="input" appearance="outline">
+                            <mat-label>Nombres: </mat-label>
+                            <input type="text" matInput formControlName="firstName">
+                            @if (f.firstName.errors && f.firstName.errors.required) {
+                              <mat-error>El campo es obligatorio</mat-error>
+                            }
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="input" appearance="outline">
+                            <mat-label>Apellidos:</mat-label>
+                            <input type="text" matInput formControlName="lastName">
+                            @if (f.lastName.errors && f.lastName.errors.required) {
+                              <mat-error>El campo es obligatorio</mat-error>
+                            }
+                          </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field class="input" appearance="outline">
+                            <mat-label>Dirección</mat-label>
+                            <input type="text" matInput formControlName="address" placeholder="Calle 9 B">
+                            @if (f.address.errors && f.address.errors.required) {
+                                <mat-error>El campo es obligatorio</mat-error>
+                              }
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="input" appearance="outline">
+                            <mat-label>Ciudad:</mat-label>
+                            <input type="text" matInput formControlName="residence" placeholder="Medellín">
+                            @if (f.residence.errors && f.residence.errors.required) {
+                              <mat-error>El campo es obligatorio</mat-error>
+                            }
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="input" appearance="outline">
+                            <mat-label>Cargo:</mat-label>
+                            <input type="text" matInput formControlName="position" placeholder="Docente">
+                            @if (f.position.errors && f.position.errors.required) {
+                              <mat-error>El campo es obligatorio</mat-error>
+                            }
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                          <mat-form-field class="input" appearance="outline">
+                            <mat-label>Fecha de nacimiento:</mat-label>
+                            <input matInput formControlName="dateBirth" [matDatepicker]="picker">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            @if (f.dateBirth.errors && f.dateBirth.errors.required) {
+                                <mat-error>El campo es obligatorio</mat-error>
+                              }
+                          </mat-form-field>
+                          
+                    </div>
+                </div>
+
+                <button mat-flat-button color="primary" type="submit">Guardar</button>
+            </form>
+        </div>
+        <div class="col-md-7 col-lg-4">
+          <img src="../../../../assets/login.png" style="width: 100%;" alt="prueba"/>
+        </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
