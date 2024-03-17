@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   private token: any;
-  public host = 'http://localhost:8080/api/v1';
+  public host = 'https://projectfucn-production.up.railway.app/api/v1';
   
   constructor(private _httpClient: HttpClient) { }
 
